@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">perfitec_ws</string>
+    <string-array name="estado">
+        <item>Activo</item>
+        <item>Inactivo</item>
+    </string-array>
+    <string-array name="rol_usuario">
+        <item>Administrador</item>
+        <item>Supervisor</item>
+        <item>Operario</item>
+    </string-array>
+</resources>
