@@ -3,14 +3,12 @@ package com.brianc.myapplication.maquinas;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.brianc.myapplication.R;
+import com.brianc.myapplication.YearPickerDialog;
 import com.brianc.myapplication.adapter.AdapterProductoMaquina;
 import com.brianc.myapplication.models.Producto;
 import org.json.JSONArray;
@@ -81,16 +80,15 @@ public class AgregarMaquinaActivity extends AppCompatActivity implements Adapter
     }
 
     private void OpenDialog() {
-       DatePickerDialog dialog =  new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+        YearPickerDialog yearPickerDialog = new YearPickerDialog(AgregarMaquinaActivity.this);
+
+        yearPickerDialog.showYearPickerDialog(new YearPickerDialog.OnYearSelectedListener() {
             @Override
-            public void onDateSet(DatePicker view, int year, int month, int day) {
-                txt_maquina_anio.setText(String.valueOf(year) + "." + String.valueOf(month) + " " + String.valueOf(day));
+            public void onYearSelected(int year) {
+                // Aquí puedes manejar el año seleccionado
+                txt_maquina_anio.setText(Integer.toString(year));
             }
-        }, 2023, 0, 15);
-
-        dialog.show();
-
-
+        });
     }
 
 

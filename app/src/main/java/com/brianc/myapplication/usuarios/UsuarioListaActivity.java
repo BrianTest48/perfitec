@@ -20,7 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.brianc.myapplication.Adapter;
+import com.brianc.myapplication.adapter.Adapter;
 import com.brianc.myapplication.R;
 import com.brianc.myapplication.models.Usuario;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

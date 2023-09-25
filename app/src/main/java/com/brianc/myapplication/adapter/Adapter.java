@@ -1,4 +1,4 @@
-package com.brianc.myapplication;
+package com.brianc.myapplication.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.brianc.myapplication.R;
 import com.brianc.myapplication.models.Usuario;
 
 import java.util.List;
