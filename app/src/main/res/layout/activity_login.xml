@@ -63,6 +63,7 @@
             android:ems="10"
             android:hint="Usuario"
             android:inputType="text"
+            android:text="12345678"
             />
 
     </LinearLayout>
@@ -90,6 +91,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
+            android:text="admin"
             android:hint="contraseña"
             />
 

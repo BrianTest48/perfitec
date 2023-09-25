@@ -150,7 +150,7 @@ public class MaquinaListaActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 if(response.equalsIgnoreCase("datos eliminados")){
                     Toast.makeText(MaquinaListaActivity.this, "Usuario eliminado", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), ProductoListaActivity.class));
+                    startActivity(new Intent(getApplicationContext(), MaquinaListaActivity.class));
                 }else{
                     Toast.makeText(MaquinaListaActivity.this, "No se ha podido eliminar al usuario", Toast.LENGTH_SHORT).show();
                 }

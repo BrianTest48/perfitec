@@ -101,7 +101,7 @@
         android:layout_marginTop="50dp">
 
         <Button
-            android:id="@+id/btn_registro_cliente"
+            android:id="@+id/btn_registro_maquina"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@drawable/boton_login_redondeado"

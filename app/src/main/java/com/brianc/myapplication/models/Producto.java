@@ -3,6 +3,7 @@ package com.brianc.myapplication.models;
 public class Producto {
 
     String id, nombre, tipo;
+    boolean isChecked;
 
     public Producto() {
     }
@@ -35,7 +36,13 @@ public class Producto {
         this.tipo = tipo;
     }
 
+    public boolean isChecked() {
+        return isChecked;
+    }
 
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
 
 
 }
