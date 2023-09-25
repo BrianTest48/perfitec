@@ -2,21 +2,18 @@ package com.brianc.myapplication.maquinas;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,21 +22,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.brianc.myapplication.R;
-import com.brianc.myapplication.adapter.AdapterProducto;
 import com.brianc.myapplication.adapter.AdapterProductoMaquina;
-import com.brianc.myapplication.clientes.AgregarClienteActivity;
-import com.brianc.myapplication.clientes.ClienteListaActivity;
 import com.brianc.myapplication.models.Producto;
-import com.brianc.myapplication.productos.ProductoListaActivity;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
@@ -56,6 +45,8 @@ public class AgregarMaquinaActivity extends AppCompatActivity implements Adapter
 
     String url_mostrar = "https://webservice.qhapai.com/crudproductos/mostrar.php";
     String url_insertar = "https://webservice.qhapai.com/crudmaquinas/insertar.php";
+
+    int choosenYear = 2023;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,10 +70,28 @@ public class AgregarMaquinaActivity extends AppCompatActivity implements Adapter
                 InsertarMaquina();
             }
         });
+        txt_maquina_anio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenDialog();
+            }
+        });
 
         MostrarRegistros();
     }
 
+    private void OpenDialog() {
+       DatePickerDialog dialog =  new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                txt_maquina_anio.setText(String.valueOf(year) + "." + String.valueOf(month) + " " + String.valueOf(day));
+            }
+        }, 2023, 0, 15);
+
+        dialog.show();
+
+
+    }
 
 
     private void MostrarRegistros() {
@@ -223,5 +232,6 @@ public class AgregarMaquinaActivity extends AppCompatActivity implements Adapter
 
         }
     }
+
 
 }
